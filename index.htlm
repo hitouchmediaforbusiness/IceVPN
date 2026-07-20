@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IceVPN | Speed, Security & Privacy</title>
+  <style>
+    :root {
+      --primary: #0088ff;
+      --primary-hover: #0066cc;
+      --bg-dark: #0a0f1d;
+      --bg-card: #131b2e;
+      --text-light: #ffffff;
+      --text-muted: #8e9bb0;
+      --accent-cyan: #00f2fe;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      background-color: rgba(10, 15, 29, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--text-light);
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 136, 255, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 5% 4rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #fff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Features Grid */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 4rem 0 2rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 0 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background-color: var(--bg-card);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Server Stats */
+    .stats-container {
+      background-color: var(--bg-card);
+      margin: 5rem 5%;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item h4 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat-item p {
+      color: var(--text-muted);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 5%;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3rem 5% 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <a href="https://afflat3c1.com/trk/lnk/3BF8B185-C400-46C9-BA86-8558C9994629/?o=32185&c=918271&a=800075&k=1831B961621BF72FB744B0C5DAEC08BB&l=38083" class="logo">
+      🧊 Ice<span>VPN</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#servers">Servers</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a href="https://afflat3c1.com/trk/lnk/3BF8B185-C400-46C9-BA86-8558C9994629/?o=32185&c=918271&a=800075&k=1831B961621BF72FB744B0C5DAEC08BB&l=38083" class="btn">Get IceVPN</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Keep Your Cool with IceVPN</h1>
+    <p>Shield your online presence with bulletproof 256-bit military-grade encryption. Enjoy lightning-fast speeds for streaming, gaming, and private browsing across all your devices.</p>
+    <a href="https://afflat3c1.com/trk/lnk/3BF8B185-C400-46C9-BA86-8558C9994629/?o=32185&c=918271&a=800075&k=1831B961621BF72FB744B0C5DAEC08BB&l=38083" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Start Protecting Your Data</a>
+  </section>
+
+  <!-- Key Features Section -->
+  <h2 class="section-title" id="features">Unmatched Security Features</h2>
+  <section class="features">
+    <div class="feature-card">
+      <h3>Strict No-Log Policy</h3>
+      <p>Your privacy matters. We enforce a strict no-logs policy, ensuring your browsing history remains completely confidential.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Internet Kill Switch</h3>
+      <p>Instantly terminates your internet traffic if the VPN connection drops unexpectedly, preventing accidental leaks.</p>
+    </div>
+    <div class="feature-card">
+      <h3>256-Bit Military Encryption</h3>
+      <p>Bulletproof encryption standards keep your sensitive data safe from hackers, surveillance, and bad actors.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Shielded IP & Location</h3>
+      <p>Obfuscate your true IP address and physical location from applications, trackers, and malicious websites.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Public Wi-Fi Protection</h3>
+      <p>Connect safely to public networks at coffee shops, airports, and hotels without risking your security.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Multi-Platform & Devices</h3>
+      <p>Protect up to 5 devices simultaneously on a single Pro subscription across Windows, macOS, Android, and iOS.</p>
+    </div>
+  </section>
+
+  <!-- Global Server Stats -->
+  <section class="stats-container" id="servers">
+    <h2>Global Coverage All Around the World</h2>
+    <p style="color: var(--text-muted); margin-top: 0.5rem;">Thousands of high-speed servers ready to bypass restrictions and power your connection.</p>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h4>3,116</h4>
+        <p>Europe</p>
+      </div>
+      <div class="stat-item">
+        <h4>1,926</h4>
+        <p>North America</p>
+      </div>
+      <div class="stat-item">
+        <h4>658</h4>
+        <p>Asia</p>
+      </div>
+      <div class="stat-item">
+        <h4>450</h4>
+        <p>Oceania</p>
+      </div>
+      <div class="stat-item">
+        <h4>170</h4>
+        <p>South America</p>
+      </div>
+      <div class="stat-item">
+        <h4>161</h4>
+        <p>Africa</p>
+      </div>
+    </div>
+    <div style="margin-top: 2.5rem;">
+      <a href="https://afflat3c1.com/trk/lnk/3BF8B185-C400-46C9-BA86-8558C9994629/?o=32185&c=918271&a=800075&k=1831B961621BF72FB744B0C5DAEC08BB&l=38083" class="btn">Browse All Servers</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <h2 class="section-title" id="faq">Frequently Asked Questions</h2>
+  <section class="faq-section">
+    <div class="faq-item">
+      <h3>How many simultaneous devices can I use?</h3>
+      <p>You can connect up to 5 devices at the same time with a Pro IceVPN subscription. Free accounts support 1 active connection.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does IceVPN keep logs of my online activities?</h3>
+      <p>Absolutely not. We value total privacy and enforce a strict no-log policy across our entire network.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What happens if my VPN connection drops?</h3>
+      <p>Our integrated Internet Kill Switch instantly stops all internet traffic to ensure no unencrypted data escapes.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Ice Privacy LTD. All Rights Reserved.</p>
+    <p>World Trade Center, 1st Floor, Unit 102, Office 272, Gibraltar</p>
+  </footer>
+
+</body>
+</html>
